@@ -12,6 +12,7 @@ class Anime(models.Model):
 class Character(models.Model):
     name = models.CharField(max_length=64, unique=True)
     belongs_to = models.ForeignKey(Anime, related_name="characters", on_delete=models.CASCADE)
+    # TODO: Add CharField for Super Power
 
     def __str__(self):
         return f"{self.belongs_to.name} - {self.name}"
